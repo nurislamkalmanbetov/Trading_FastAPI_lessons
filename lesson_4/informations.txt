@@ -1,0 +1,5 @@
+.env -> pip install python-dotenv
+alembic -> migrations for sqlalchemy  -> alembic init migrations
+psycopg2-binary -> (binary for linux) -> 
+
+connect to psql - models, .env, config, migrations(versions -> revision: str = '22552eb9bede' )
