@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <button onclick="sendEmail()">Отправить отчет</button>
+    
+    <script>
+        function sendEmail() {
+            fetch('/report/dashboard', {
+                method: 'GET'
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Письмо отправлено');
+                } else {
+                    throw new Error('Ошибка при отправке письма');
+                }
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+                alert('Ошибка при отправке письма');
+            });
+        }
+    </script>
+</body>
+</html>
